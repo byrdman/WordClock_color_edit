@@ -706,7 +706,7 @@ void displayWords() {
     }
   }
   
-  // is we're on the hour, add O'CLOCK
+  // if we're on the hour, add O'CLOCK
   if (mytimemin > 57 && mytimemin < 3) {
     if((mytimehr == 23 && mytimemin>57 || mytimehr == 0 && mytimemin<3) ||
        (mytimehr == 11 && mytimemin>57 || mytimehr == 12 && mytimein<3)){
