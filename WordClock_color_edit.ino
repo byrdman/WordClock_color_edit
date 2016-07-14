@@ -492,111 +492,91 @@ void displayWords() {
   if(mytimehr==1){
     if(mytimemin>32){
       hourTWO;
-      phraseOCLOCK;
     }
     else
     {
       hourONE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==2){
     if(mytimemin>32){
       hourTHREE;
-      phraseOCLOCK;
     }
     else
     {
       hourTWO;
-      phraseOCLOCK;
     }
   }
     if(mytimehr==3){
     if(mytimemin>32){
       hourFOUR;
-      phraseOCLOCK;
     }
     else
     {
       hourTHREE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==4){
     if(mytimemin>32){
       hourFIVE;
-      phraseOCLOCK;
     }
     else
     {
       hourFOUR;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==5){
     if(mytimemin>32){
       hourSIX;
-      phraseOCLOCK;
     }
     else
     {
       hourFIVE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==6){
     if(mytimemin>32){
       hourSEVEN;
-      phraseOCLOCK;
     }
     else
     {
       hourSIX;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==7){
     if(mytimemin>32){
       hourEIGHT;
-      phraseOCLOCK;
     }
     else
     {
       hourSEVEN;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==8){
     if(mytimemin>32){
       hourNINE;
-      phraseOCLOCK;
     }
     else
     {
       hourEIGHT;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==9){
     if(mytimemin>32){
       hourTEN;
-      phraseOCLOCK;
     }
     else
     {
       hourNINE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==10){
     if(mytimemin>32){
       hourELEVEN;
-      phraseOCLOCK;
     }
     else
     {
       hourTEN;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==11){
@@ -606,13 +586,11 @@ void displayWords() {
     else
     {
       hourELEVEN;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==12){
     if(mytimemin>32){
       hourONE;
-      phraseOCLOCK;
     }
     else
     {
@@ -622,111 +600,91 @@ void displayWords() {
       if(mytimehr==13){
     if(mytimemin>32){
       hourTWO;
-      phraseOCLOCK;
     }
     else
     {
       hourONE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==14){
     if(mytimemin>32){
       hourTHREE;
-      phraseOCLOCK;
     }
     else
     {
       hourTWO;
-      phraseOCLOCK;
     }
   }
     if(mytimehr==15){
     if(mytimemin>32){
       hourFOUR;
-      phraseOCLOCK;
     }
     else
     {
       hourTHREE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==16){
     if(mytimemin>32){
       hourFIVE;
-      phraseOCLOCK;
     }
     else
     {
       hourFOUR;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==17){
     if(mytimemin>32){
       hourSIX;
-      phraseOCLOCK;
     }
     else
     {
       hourFIVE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==18){
     if(mytimemin>32){
       hourSEVEN;
-      phraseOCLOCK;
     }
     else
     {
       hourSIX;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==19){
     if(mytimemin>32){
       hourEIGHT;
-      phraseOCLOCK;
     }
     else
     {
       hourSEVEN;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==20){
     if(mytimemin>32){
       hourNINE;
-      phraseOCLOCK;
     }
     else
     {
       hourEIGHT;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==21){
     if(mytimemin>32){
       hourTEN;
-      phraseOCLOCK;
     }
     else
     {
       hourNINE;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==22){
     if(mytimemin>32){
       hourELEVEN;
-      phraseOCLOCK;
     }
     else
     {
       hourTEN;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==23){
@@ -736,19 +694,28 @@ void displayWords() {
     else
     {
       hourELEVEN;
-      phraseOCLOCK;
     }
   }
   if(mytimehr==0){
     if(mytimemin>32){
       hourONE;
-      phraseOCLOCK;
     }
     else
     {
       hourMIDNIGHT;
     }
   }
+  
+  // is we're on the hour, add O'CLOCK
+  if (mytimemin > 57 && mytimemin < 3) {
+    if((mytimehr == 23 && mytimemin>57 || mytimehr == 0 && mytimemin<3) ||
+       (mytimehr == 11 && mytimemin>57 || mytimehr == 12 && mytimein<3)){
+        // do nothing, special words for midnight and noon
+    } else  {
+      phraseOCLOCK;
+    }
+  }
+  
   applyMask(); 
 }
 
